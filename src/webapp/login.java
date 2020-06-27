@@ -1,9 +1,8 @@
 package webapp;
 
-import appLayer.User;
+import dataLayer.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,12 +15,12 @@ public class login extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    User user = new User("izer", "pass");
+    UserDAO userDAO = new UserDAO();
 
     String username = request.getParameter("username");
     String password = request.getParameter("password");
 
-    if (user.isValid(username, password)) {
+    if (userDAO.isValid(username, password)) {
       request.setAttribute("username", request.getParameter("username"));
       request.setAttribute("password", request.getParameter("password"));
 
