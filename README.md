@@ -1,5 +1,7 @@
 # java-web-app
 
-A simple webapp written in Java using JavaServer pages and servlets.
+A simple webapp written in Java using Model-View-Controller design pattern.
 
-It runs on an Apache Tomcat application server, and makes use of a MySQL database.
+Makes use of JavaServer Pages (view), Java servlets (controller) and a MySQL database (model). 
+
+The application runs on an Apache Tomcat application server.
