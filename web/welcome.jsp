@@ -12,5 +12,7 @@
         Welcome to my first my first webapp.
     </p>
 
+    <h3><a href="/index.jsp">HOME</a></h3>
+
 </body>
 </html>

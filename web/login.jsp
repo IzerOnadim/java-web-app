@@ -5,7 +5,7 @@
 </head>
 <body>
 
-    <h1>Welcome to my first webapp.</h1>
+    <h1>Log in</h1>
     <br>
 
     <form action="/login" method="post">
@@ -18,6 +18,8 @@
     </form>
 
     <p style="color:red;">${errorMessage}</p>
+
+    <h3><a href="/index.jsp">HOME</a></h3>
 
 </body>
 </html>

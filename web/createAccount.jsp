@@ -13,10 +13,12 @@
             <input type="text" name="username" width="30"/></p>
         <p><label>password:</label>
             <input type="password" name="password" width="30"/></p>
-        <input type="submit" value="Login">
+        <input type="submit" value="Create account">
     </form>
 
     <p style="color:red;">${errorMessage}</p>
+
+    <h3><a href="/index.jsp">HOME</a></h3>
 
 </body>
 </html>
