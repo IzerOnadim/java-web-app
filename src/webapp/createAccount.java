@@ -24,9 +24,9 @@ public class createAccount extends HttpServlet {
       request.setAttribute("password", password);
       request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     } else {
-      request.setAttribute("errorMessage", "That username and/or password is already in use, "
+      request.setAttribute("errorMessage", "That username is already in use, "
           + "please pick something else.");
-      request.getRequestDispatcher("/signup.jsp").forward(request, response);
+      request.getRequestDispatcher("/createAccount.jsp").forward(request, response);
     }
 
   }

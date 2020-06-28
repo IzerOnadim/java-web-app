@@ -41,6 +41,30 @@ public class UserDAO {
     }
   }
 
+  private void resultSetCloseSafe(ResultSet resultSet) {
+    try {
+      if (resultSet != null && !resultSet.isClosed())
+        resultSet.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private void statementCloseSafe(Statement statement) {
+    try {
+      if (statement != null && !statement.isClosed())
+        statement.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private void closeAndDisconnect(Statement statement, ResultSet resultSet) {
+    resultSetCloseSafe(resultSet);
+    statementCloseSafe(statement);
+    disconnect();
+  }
+
   public boolean isValid(String username, String password) {
     boolean valid = false;
     connect();
@@ -53,51 +77,40 @@ public class UserDAO {
       String sql = String.format(
           "SELECT * FROM users WHERE username = \"%s\" AND password = \"%s\"", username, password);
       resultSet = statement.executeQuery(sql);
-
-      if (resultSet.next()) valid = true;
-
+      valid = resultSet.next();
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      try {
-        if (resultSet != null && !resultSet.isClosed())
-          resultSet.close();
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-      try {
-        if (statement != null && !statement.isClosed())
-          statement.close();
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
+      closeAndDisconnect(statement, resultSet);
     }
-
-    disconnect();
     return valid;
   }
 
   public boolean createAccount(String username, String password) {
 
-    if (isValid(username, password)) return false;
-
-    boolean accountCreated = false;
     connect();
     Statement statement = null;
     ResultSet resultSet = null;
 
     try {
       statement = connection.createStatement();
+      String userQuery = String.format("SELECT * FROM users WHERE username = \"%s\"", username);
+
+      resultSet = statement.executeQuery(userQuery);
+
+      if (resultSet.next()) return false;
+
       String sql = String.format(
           "INSERT INTO users (username, password) VALUES (\"%s\", \"%s\")", username, password);
 
-      accountCreated = statement.executeUpdate(sql) > 0;
+      return statement.executeUpdate(sql) > 0;
     } catch (Exception e) {
       e.printStackTrace();
+    } finally {
+      closeAndDisconnect(statement, resultSet);
     }
 
-    disconnect();
-    return accountCreated;
+    return false;
   }
 
 }
