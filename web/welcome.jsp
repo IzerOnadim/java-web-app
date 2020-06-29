@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" href="main.css" type="text/css"/>
 </head>
 <body>
 
@@ -12,7 +13,7 @@
         Welcome to my first my first webapp.
     </p>
 
-    <h3><a href="/index.jsp">HOME</a></h3>
+    <h3><a class="button" href="./index.jsp">HOME</a></h3>
 
 </body>
 </html>

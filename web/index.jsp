@@ -3,13 +3,14 @@
 <html>
 <head>
   <title>Java Web App</title>
+  <link rel="stylesheet" href="main.css" type="text/css"/>
 </head>
 <body>
 
   <h1>Hello World!</h1>
   <p>This is my first web app.</p>
-  <p><a href="login.jsp">Login</a></p>
-  <p><a href="createAccount.jsp">Create an account</a></p>
+  <p><a class="button" href="login.jsp">Login</a></p>
+  <p><a class="button" href="createAccount.jsp">Create an account</a></p>
 
   <h2>Technologies used:</h2>
 
@@ -24,4 +25,5 @@
   <b><%= new Date()%></b>
 
 </body>
+  <script src="./home.js"></script>
 </html>
