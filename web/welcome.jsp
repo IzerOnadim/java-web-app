@@ -14,6 +14,7 @@
     </p>
 
     <button onclick="window.location.href='./index.jsp'">Home</button>
+    <button onclick="window.location.href='./deleteAccount.jsp'">Delete my account</button>
 
 </body>
 </html>
