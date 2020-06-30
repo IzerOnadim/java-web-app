@@ -24,9 +24,9 @@
         <input type="submit" value="Create account">
     </form>
 
-    <p style="color:red;">${errorMessage}</p>
+    <button onclick="window.location.href='./index.jsp'">Home</button>
 
-    <h3><a class="button" href="./index.jsp">HOME</a></h3>
+    <p style="color:red;">${errorMessage}</p>
 
 </body>
 </html>

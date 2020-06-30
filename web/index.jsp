@@ -9,8 +9,9 @@
 
   <h1>Hello World!</h1>
   <p>This is my first web app.</p>
-  <p><a class="button" href="login.jsp">Login</a></p>
-  <p><a class="button" href="createAccount.jsp">Create an account</a></p>
+
+  <button onclick="window.location.href='login.jsp'">Login</button>
+  <button onclick="window.location.href='createAccount.jsp'">Create an account</button>
 
   <h2>Technologies used:</h2>
 

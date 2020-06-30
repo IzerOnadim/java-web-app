@@ -24,9 +24,11 @@
         <input type="submit" value="Login">
     </form>
 
+    <button onclick="window.location.href='./index.jsp'">Home</button>
+
     <p style="color:red;">${errorMessage}</p>
 
-    <h3><a class="button" href="./index.jsp">HOME</a></h3>
+
 
 </body>
 </html>

@@ -13,7 +13,7 @@
         Welcome to my first my first webapp.
     </p>
 
-    <h3><a class="button" href="./index.jsp">HOME</a></h3>
+    <button onclick="window.location.href='./index.jsp'">Home</button>
 
 </body>
 </html>
