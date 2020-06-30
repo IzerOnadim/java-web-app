@@ -14,7 +14,6 @@
   <button onclick="window.location.href='createAccount.jsp'">Create an account</button>
 
   <h2>Technologies used:</h2>
-
   <ul>
     <li>Java</li>
     <li>Apache Tomcat application server</li>
