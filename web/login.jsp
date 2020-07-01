@@ -31,4 +31,5 @@
 
 
 </body>
+<script src="./home.js"></script>
 </html>

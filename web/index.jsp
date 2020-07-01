@@ -25,5 +25,5 @@
   <b><%= new Date()%></b>
 
 </body>
-  <script src="./home.js"></script>
+<script src="./home.js"></script>
 </html>
