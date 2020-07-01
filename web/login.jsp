@@ -21,7 +21,7 @@
                 <input type="password" name="password" width="30"/>
             </label>
         </p>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login"/>
     </form>
 
     <button onclick="window.location.href='./index.jsp'">Home</button>
